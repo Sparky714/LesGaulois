@@ -27,7 +27,7 @@ public class Druide {
 		return "Le Druide " + nom + " : ";
 	}
 	
-	private void preparerPotion(Gaulois gaulois) {
+	public void preparerPotion(Gaulois gaulois) {
 		Random rand = new Random();
 		int int_rand = rand.nextInt(effetPotionMax);
 		while(int_rand < effetPotionMin) {
@@ -42,13 +42,17 @@ public class Druide {
 		}
 	}
 	
-	private void booster(Gaulois gaulois) {
-		
+	public void booster(Gaulois gaulois) {
+		if(gaulois.getNom()=="Obélix") {
+			parler("Non Obélix ! Tu n'auras pas de potion magique !");
+		}else {
+			preparerPotion(gaulois);
+		}
 	}
 	
 	public static void main(String[] args) {
-		Druide Panoramix = new Druide("Panoramix", 5, 10);
+		Druide panoramix = new Druide("Panoramix", 5, 10);
 		Gaulois asterix = new Gaulois("Astérix", 8);
-		Panoramix.preparerPotion(asterix);
+		panoramix.preparerPotion(asterix);
 	}
 }
