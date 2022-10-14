@@ -65,14 +65,14 @@ public class Romain {
 	
 	public static void main(String[] args) {
 		//TODO créer un main permettant de tester la classe Gaulois
-		Romain PetitMinus = new Romain("PetitMinus", 6);
-		System.out.println(PetitMinus);
-		PetitMinus.parler("Bonjour !");
-		PetitMinus.recevoirCoup(12);
-		PetitMinus.sEquiper(PetitMinus, Equipement.CASQUE);
-		PetitMinus.sEquiper(PetitMinus, Equipement.CASQUE);
-		PetitMinus.sEquiper(PetitMinus, Equipement.BOUCLIER);
-		PetitMinus.sEquiper(PetitMinus, Equipement.CASQUE);
+		Romain petitMinus = new Romain("PetitMinus", 6);
+		System.out.println(petitMinus);
+		petitMinus.parler("Bonjour !");
+		petitMinus.recevoirCoup(12);
+		petitMinus.sEquiper(petitMinus, Equipement.CASQUE);
+		petitMinus.sEquiper(petitMinus, Equipement.CASQUE);
+		petitMinus.sEquiper(petitMinus, Equipement.BOUCLIER);
+		petitMinus.sEquiper(petitMinus, Equipement.CASQUE);
 	}
 	
 }
