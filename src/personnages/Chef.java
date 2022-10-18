@@ -10,23 +10,24 @@ public class Chef {
 		this.force = force;
 		this.effetPotion = effetPotion;
 		this.village = village;
+		village.setChef(this);
 	}
-	
+
 	public String getNom() {
 		return nom;
 	}
-	
+
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "«" + texte + "»");
 	}
-	
+
 	private String prendreParole() {
 		return "Le Chef " + nom + " du village " + village.getNom() + " : ";
 	}
-	
+
 	public void frapper(Romain romain) {
 		System.out.println(nom + "envoie un grand coup dans la gueule de " + romain.getNom());
 		romain.recevoirCoup(force/3);
 	}
-	
+
 }
