@@ -85,6 +85,9 @@ public class Romain {
 		}
 		parler(texte);
 		forceCoup -= resistanceEquipement;
+		if(forceCoup < 0) {
+			forceCoup =  0;
+		}
 		return forceCoup;
 	}
 
@@ -113,7 +116,7 @@ public class Romain {
 		String soldat = "Le soldat ";
 		switch(nbEquipement) {
 		case 2:
-			System.out.println(soldat + romain.getNom() + " est déjà  bien Ã©quipÃ© !");
+			System.out.println(soldat + romain.getNom() + " est déjà  bien équipé !");
 			break;
 		case 1:
 			if(equip == equipement[0]) {

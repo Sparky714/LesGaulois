@@ -6,6 +6,7 @@ public class Gaulois {
 	private int nbTrophees;
 	private int effetPotion = 1;
 	private Equipement[] trophees = new Equipement[100];
+	
 
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -50,9 +51,22 @@ public class Gaulois {
 	public String toString() {
 		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
 	}
+	
+	public void faireUneDonation(Musee musee) {
+		if(nbTrophees == 0) {
+			parler("Je n'ai pas de trophée pour vous...");
+		}else {
+			parler("Je donne mes trophees au musee : ");
+			for(int i = nbTrophees; i > 0 ; i--) {
+				System.out.println(trophees[i]);		
+				musee.donnerTrophee(this, trophees[i]);
+				trophees[i] = null;
+			}
+		}
+	}
 
 	public static void main(String[] args) {
-		//TODO crï¿½er un main permettant de tester la classe Gaulois
+		//TODO créer un main permettant de tester la classe Gaulois
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		Romain petitMinus = new Romain("PetitMinus", 6);
 		System.out.println(asterix);
